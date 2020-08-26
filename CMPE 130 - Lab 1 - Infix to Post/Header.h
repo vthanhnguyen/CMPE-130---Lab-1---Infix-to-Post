@@ -12,9 +12,7 @@ class infixToPostfix
 {
 public:
 	infixToPostfix(string = "");	//default constructor
-
-	void converntToPostfix();
-	void setInfix(string);
+	string converntToPostfix(string);
 	void showInfix();
 	void showPostfix();
 	bool precedence(char opr1, char opr2);

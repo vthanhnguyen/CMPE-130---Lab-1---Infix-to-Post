@@ -14,18 +14,27 @@ int main()
 {
     string data;            // create memory for the infix string
     infixToPostfix infix;   // create the object
+    bool flag = false;
+    while (flag == false)
+    {
+        cout << "Please enter the infix equation to be converted to postfix: \n";
+        cin >> data;            // get data from user
 
-    cout << "Please enter the infix equation to be converted to postfix: \n";
-    cin >> data;            // get data from user
+        string postfix = infix.converntToPostfix(data);
 
-    cout << "\n\n";         // just makine some new lines 
+        infix.showInfix();
+        infix.showPostfix();
 
-    infix.setInfix(data);   // set the string entered to the objects infix string
+        cout << "Would you like to enter another infix expression to be converted ?\n"
+             << "Enter 1 for yes or any number for no" << endl;
+        int choice;
+        cin >> choice;
 
-    infix.converntToPostfix();
-    infix.showInfix();
-    infix.showPostfix();
-   
+        if (choice == 1)
+            flag = false;
+        else
+            flag = true;
+    }
     return 0;
 }
 
